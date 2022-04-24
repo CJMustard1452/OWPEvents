@@ -1,0 +1,14 @@
+name: Staff_Events
+version: 0.0.1
+main: CJMustard1452\Staff_Events\Main
+api: 3.28.0
+
+commands:
+  event:
+    description: Start an event
+    permission: global.staffevents
+
+permissions:
+  global.staffevents:
+    default: op
+    description: Staff Events Perms
