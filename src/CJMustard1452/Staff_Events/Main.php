@@ -28,7 +28,7 @@ class Main extends PluginBase implements Listener{
 							if(strtolower($args[1]) === "mk"){
 								foreach($this->getServer()->getOnlinePlayers() as $player){
 									$player->sendTitle('§aan event has started!');
-									$player->sendMessage("§d(Events§d) §ba gamemode of §cMass Killer§b Kill 8 DIFFERENT players to win the game!");
+									$player->sendMessage("§d(Events§d) §ba game of §cMass Killer§b Kill 8 DIFFERENT players to win the game!");
 									$GameFile->set("EventRunning", true);
 									$GameFile->set("MKActiveGame", true);
 									$GameFile->save();
