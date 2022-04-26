@@ -7,11 +7,13 @@ An events plugin created for discord.gg/ownage enabling staff members to host sm
  OP
  
 ---
+
 - Commands
 
 /event (list) | (start) | (stop)
 
-
+---
 
 User: https://github.com/CJMustard1452
+
 Plugin: https://github.com/CJMustard1452/OwnagePE-Staff-Events
