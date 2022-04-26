@@ -1,6 +1,6 @@
 name: OWPE-Events
 version: 0.0.1
-main: CJMustard1452\OWPE-Events\Main
+main: CJMustard1452\OWPE_Events\Main
 api: 3.28.0
 
 commands:
