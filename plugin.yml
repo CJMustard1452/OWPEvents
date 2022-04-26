@@ -4,7 +4,7 @@ main: CJMustard1452\OWPE_Events\Main
 api: 3.28.0
 
 commands:
-  event:
+  oevent:
     description: Ownage event commands
     permission: owpe-eventscommand
 
