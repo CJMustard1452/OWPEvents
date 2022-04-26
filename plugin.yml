@@ -5,10 +5,10 @@ api: 3.28.0
 
 commands:
   event:
-    description: Start an event
-    permission: global.staffevents
+    description: Ownage event commands
+    permission: owpe-eventscommand
 
 permissions:
-  global.staffevents:
+  owpe-eventscommand:
     default: op
-    description: Staff Events Perms
+    description: Ownage Event Permissions
