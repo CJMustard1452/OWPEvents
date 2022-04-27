@@ -10,7 +10,7 @@ An events plugin created for discord.gg/ownage enabling staff members to host sm
 
 - Commands
 
-/event (list) | (start) | (stop)
+/owpevent (list) | (start) | (stop)
 
 ---
 
