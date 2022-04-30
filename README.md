@@ -3,8 +3,10 @@ An events plugin created for discord.gg/ownage enabling staff members to host sm
 
 - Permissions: 
 
- owpe-eventscommand,
- OP
+ owpe-eventscommand.manage
+ 
+ owpe-eventscommand.default
+ 
  
 ---
 
