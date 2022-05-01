@@ -211,7 +211,7 @@ class Main extends PluginBase implements Listener{
 		}
 		}elseif($GameFile->get("UsrHuntActiveGame") == true){
 			if($event->getPlayer()->getName() === $GameFile->get("usrhuntplayer")){
-				$this->getServer()->broadcastMessage("§b Unfortunately ". $event->getPlayer()->getName(). " has left the game.!");
+				$this->getServer()->broadcastMessage("§b Unfortunately ". $GameFile->get("usrhuntplayer"). " has left the game.!");
 				$GameFile->set("usrhuntplayer", null);
 				$GameFile->set("UsrHuntActiveGame", false);
 				$GameFile->set("EventRunning", false);
