@@ -15,10 +15,11 @@ use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener{
 
-	public function onEnable(){
+		public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+		if($this->getServer()->getPlayer($sender->getName()) instanceof Player){
 		if($sender->hasPermission("owpe-eventscommand.manage")){
 			$GameFile = $this->myConfig = new Config($this->getDataFolder() . "gamefile.json", Config::JSON);
 				$form = $this->getServer()->getPluginManager()->getPlugin("FormAPI")->createCustomForm(function(Player $sender, ?array $data = null){
@@ -104,6 +105,9 @@ class Main extends PluginBase implements Listener{
 
 		}else{
 			$sender->sendMessage("§cYou do not have permission to run this command.");
+			}
+		}else{
+			$sender->sendMessage("You can only run this command in game!");
 		}
 		return true;
 	}
