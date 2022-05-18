@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener{
 							if($GameFile->get("EventRunning") == false){
 								if(count($this->getServer()->getOnlinePlayers()) >= 8){
 									foreach($this->getServer()->getOnlinePlayers() as $player){
-										$NumberOfPlayers = count($this->getServer()->getOnlinePlayers()) / 2;
+										$NumberOfPlayers = round(count($this->getServer()->getOnlinePlayers()) / 3);
 										$player->sendMessage("§a↣ an event has started, kill §b$NumberOfPlayers §aDIFFERENT players to win the game!");
 										$GameFile->set("EventRunning", true);
 										$GameFile->set("NumberOfPlayers", "$NumberOfPlayers");
