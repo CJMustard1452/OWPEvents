@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener{
 								if(count($this->getServer()->getOnlinePlayers()) >= 8){
 									foreach($this->getServer()->getOnlinePlayers() as $player){
 										$NumberOfPlayers = count($this->getServer()->getOnlinePlayers()) / 2;
-										$player->sendMessage("§a↣ an event has started, kill §b$NumberOfPlayers DIFFERENT players to win the game!");
+										$player->sendMessage("§a↣ an event has started, kill §b$NumberOfPlayers §aDIFFERENT players to win the game!");
 										$GameFile->set("EventRunning", true);
 										$GameFile->set("NumberOfPlayers", "$NumberOfPlayers");
 										$GameFile->set("MKActiveGame", true);
