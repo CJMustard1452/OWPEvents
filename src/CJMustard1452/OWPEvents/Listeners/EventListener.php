@@ -30,11 +30,11 @@ class EventListener implements Listener{
 			if($GameFile->get("MKActiveGame") === true){
 				for($x = 1; $x <= $GameFile->get("NumberOfPlayers"); $x++){
 					if($UserFile->get("$x") == $event->getPlayer()->getName()){
-						$event->getPlayer()->getLastDamageCause()->getDamager()->sendMessage("§a↣ You have already killed this player!");
+						$event->getPlayer()->getLastDamageCause()->getDamager()->sendMessage("§a↣ You have already killed this player.");
 						return true;
 					}else{
 						if($UserFile->get("Kills") == $GameFile->get("NumberOfPlayers") - 1){
-							$this->getServer->broadcastMessage("§a↣ " . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " has won the event!");
+							$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " §ahas won the event!");
 							foreach($this->getServer->getOnlinePlayers() as $player){
 								$Usernames = $player->getName();
 								$UserFile = $this->myConfig = new Config($this->getPlugin->getDataFolder() . "$Usernames.json", Config::JSON);
@@ -54,7 +54,7 @@ class EventListener implements Listener{
 								if($UserFile->get("$x") == null){
 									$UserFile->set("$x", $event->getPlayer()->getName());
 									$UserFile->set("Kills", $UserFile->get("Kills") + 1);
-									$this->getServer->broadcastMessage("§a↣ " . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " is on " . $UserFile->get("Kills") . " kills!");
+									$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . "§a is on §b" . $UserFile->get("Kills") . " §akills!");
 									$UserFile->save();
 									return true;
 								}
@@ -67,7 +67,7 @@ class EventListener implements Listener{
 				if($event->getPlayer()->getName() === $GameFile->get("usrhuntplayer")){
 					$Killer = $event->getPlayer()->getLastDamageCause()->getDamager();
 					$Killed = $event->getPlayer()->getName();
-					$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " §ahas killed §b" . $event->getPlayer()->getName() . " and won the game!");
+					$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " §ahas killed §b" . $event->getPlayer()->getName() . " §aand won the game!");
 					$GameFile->set("UsrHuntActiveGame", false);
 					$GameFile->set("EventRunning", false);
 					$GameFile->set("usrhuntplayer", true);
