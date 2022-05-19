@@ -1,0 +1,19 @@
+---
+name: OWPEvents
+version: 0.0.1
+main: CJMustard1452\OWPEvents\OWPEvents
+api: 3.28.0
+
+commands:
+  owpevent:
+    description: Ownage event commands
+    permission: owpe-eventscommand.default
+
+permissions:
+  owpe-eventscommand.manage:
+    default: op
+    description: Ownage Event Management Permissions
+  owpe-eventscommand.default:
+    default: true
+    description: Ownage Event Default Permissions
+...
