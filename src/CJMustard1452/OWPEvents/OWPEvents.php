@@ -10,12 +10,16 @@ use pocketmine\utils\Config;
 
 class OWPEvents extends PluginBase implements Listener{
 	public function onEnable(): void{
-		unlink($this->getDataFolder() . "imbt");
+		if(file_exists($this->getDataFolder() . "imbt")){
+			unlink($this->getDataFolder() . "imbt");
+		}
 		new Config($this->getDataFolder() . "imbt", Config::JSON);
 		$this->getServer()->getPluginManager()->registerEvents(new OWPEventCommand(), $this);
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 	}
 	public function onDisable() :Void{
+		if(file_exists($this->getDataFolder() . "imbt")){
 		unlink($this->getDataFolder() . "imbt");
+		}
 	}
 }
