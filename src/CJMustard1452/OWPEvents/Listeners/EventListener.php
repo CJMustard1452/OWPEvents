@@ -27,10 +27,12 @@ class EventListener implements Listener{
 		if($event->getPlayer()->getLastDamageCause() instanceof EntityDamageByEntityEvent && $event->getPlayer()->getLastDamageCause()->getDamager() instanceof Player && $event->getPlayer() instanceof Player){
 			$this->getData = json_decode(file_get_contents($this->getPlugin->getDataFolder() . "imbt"), true);
 			if(isset($this->getData["EventCore"]["Current Event"]) && $this->getData["EventCore"]["Current Event"] == "intkills"){
-				if(isset($this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()]["kills"]) && $this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()]["kills"] >= intval($this->getData["EventCore"]["intkills"])){
-					$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " §ahas killed §b" . $event->getPlayer()->getName() . " §aand won the game!");
-					unlink($this->getPlugin->getDataFolder() . "imbt");
-					new Config($this->getPlugin->getDataFolder() . "imbt", Config::JSON);
+				if(isset($this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()]["kills"])){
+					if($this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()]["kills"] >= intval($this->getData["EventCore"]["intkills"]) - 1){
+						$this->getServer->broadcastMessage("§a↣ §b" . $event->getPlayer()->getLastDamageCause()->getDamager()->getName() . " §ahas killed §b" . $event->getPlayer()->getName() . " §aand won the game!");
+						unlink($this->getPlugin->getDataFolder() . "imbt");
+						new Config($this->getPlugin->getDataFolder() . "imbt", Config::JSON);
+					}
 				}else{
 					if(!isset($this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()][$event->getPlayer()->getName()])){
 						$this->getData[$event->getPlayer()->getLastDamageCause()->getDamager()->getName()][$event->getPlayer()->getName()] = true;
