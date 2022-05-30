@@ -48,7 +48,7 @@ class OWPEventCommand implements Listener{
 								if(!isset($this->getData["EventCore"]["Event Running"])){
 									//Top Kills - Done
 									if(implode($data) == "0"){
-										if(count($this->getServer->getOnlinePlayers()) >=  0){
+										if(count($this->getServer->getOnlinePlayers()) >=  8){
 											$this->getServer->broadcastMessage("§a↣ an event has started, kill §b" . round(count($this->getServer->getOnlinePlayers()) / 3.4) . " §aDIFFERENT players to win the game!");
 											$this->getData["EventCore"]["Event Running"] = true;
 											$this->getData["EventCore"]["Current Event"] = "intkills";
